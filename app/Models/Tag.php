@@ -14,7 +14,7 @@ class Tag extends Model
         'slug'
     ];
 
-    public function post()
+    public function posts()
     {
        return $this->belongsToMany(Post::class)->withTimestamps();
     }

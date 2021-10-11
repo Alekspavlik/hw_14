@@ -55,6 +55,7 @@ class PostController extends Controller
     public function delete()
     {
         $post = Post::find(request()->route()->parameter('id'));
+        $post->tags()->detach();
         $post->delete();
 
        return redirect('/posts');

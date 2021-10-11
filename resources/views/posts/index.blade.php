@@ -12,6 +12,7 @@
             <th scope="col">Title</th>
             <th scope="col">Slug</th>
             <th scope="col">Body</th>
+            <th scope="col">Category_title</th>
             <th scope="col">Category_id</th>
             <th scope="col">Created_at</th>
             <th scope="col">Updated_at</th>
@@ -25,6 +26,7 @@
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->slug }}</td>
                 <td>{{ $post->body }}</td>
+                <td>@isset($post->category->title){{ $post->category->title }}@endisset</td>
                 <td>{{ $post->category_id }}</td>
                 <td>{{ $post->created_at }}</td>
                 <td>{{ $post->updated_at }}</td>

@@ -47,6 +47,7 @@ class CategoryController extends Controller
     public function delete()
     {
         $category = Category::find(request()->route()->parameter('id'));
+        $category->post()->update(['category_id' => null]);
         $category->delete();
 
         return redirect('/categories');

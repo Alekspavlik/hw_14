@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\Tag;
 
@@ -46,7 +45,7 @@ class TagController extends Controller
     public function delete()
     {
         $tag = Tag::find(request()->route()->parameter('id'));
-        $tag->post()->detach();
+        $tag->posts()->detach();
         $tag->delete();
 
        return redirect('/tags');

@@ -15,14 +15,14 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
+            $table->string('title');
             $table->string('slug')->unique();
             $table->timestamps();
         });
 
         Schema::table('posts', function(Blueprint $table){
             $table->foreignId('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories')->nullOnDelete();
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
